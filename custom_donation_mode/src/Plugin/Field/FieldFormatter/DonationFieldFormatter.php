@@ -30,9 +30,9 @@ public function viewElements(FieldItemListInterface $items,$langcode) {
    foreach ($items as $delta => $item) {
     if($item->payment_mode != 'none'){
         if($item->payment_mode == 'offline'){
-        $fieldView = $item->payment_mode .','.$item->payment_type;
+        $fieldView = '<p><b>Payment Mode : </b>'.$item->payment_mode .'</p><p><b>Mode Type : </b>'.$item->payment_type.'</p>';
         }else{
-        $fieldView = $item->payment_mode;
+        $fieldView = '<p><b>Payment Mode : </b>'.$item->payment_mode.'</p>';
         }
         $elements[$delta] = ['#markup' => $fieldView];
       }
